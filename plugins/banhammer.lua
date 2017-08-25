@@ -19,17 +19,17 @@ user_name = check_markdown(data.first_name_)
 end
 if is_banned(data.id_, arg.chat_id) then
    if not lang then
-		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_User_ "..user_name.." *[ "..data.id_.." ]* _is banned_", 0, "md")
+		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_User_  *[ "..data.id_.." ]* _is banned_", 0, "md")
    else
-		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_کاربر_ "..user_name.." *[ "..data.id_.." ]* _از گروه محروم است_", 0, "md")
+		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *[ "..data.id_.." ]* _از گروه محروم است_", 0, "md")
 end
 kick_user(data.id_, arg.chat_id)
 end
 if is_gbanned(data.id_) then
      if not lang then
-		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_User_ "..user_name.." *[ "..data.id_.." ]* _is globally banned_", 0, "md")
+		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_User_  *[ "..data.id_.." ]* _is globally banned_", 0, "md")
     else
-		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_کاربر_ "..user_name.." *[ "..data.id_.." ]* _از تمام گروه های ربات محروم است_", 0, "md")
+		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *[ "..data.id_.." ]* _از تمام گروه های ربات محروم است_", 0, "md")
    end
 kick_user(data.id_, arg.chat_id)
      end
@@ -81,18 +81,18 @@ end
      end
 if administration[tostring(arg.chat_id)]['banned'][tostring(data.id_)] then
     if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already_ *banned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is already_ *banned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* * از گروه محروم بود*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* * از گروه محروم بود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['banned'][tostring(data.id_)] = user_name
     save_data(_config.moderation.data, administration)
    kick_user(data.id_, arg.chat_id)
     if not lang then
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *banned*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _has been_ *banned*", 0, "md")
     else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از گروه محروم شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از گروه محروم شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -112,18 +112,18 @@ user_name = check_markdown(data.first_name_)
 end
 if not administration[tostring(arg.chat_id)]['banned'][tostring(data.id_)] then
     if not lang then
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not_ *banned*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is not_ *banned*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از گروه محروم نبود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از گروه محروم نبود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['banned'][tostring(data.id_)] = nil
     save_data(_config.moderation.data, administration)
 channel_unblock(arg.chat_id, data.id_)
    if not lang then
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *unbanned*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _has been_ *unbanned*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از محرومیت گروه خارج شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از محرومیت گروه خارج شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -157,17 +157,17 @@ end
      end
 if administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] then
     if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already_ *silent*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is already_ *silent*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل توانایی چت کردن رو نداشت*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از قبل توانایی چت کردن رو نداشت*", 0, "md")
      end
    end
 administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = user_name
     save_data(_config.moderation.data, administration)
   if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _added to_ *silent users list*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _added to_ *silent users list*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *توانایی چت کردن رو از دست داد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *توانایی چت کردن رو از دست داد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -187,17 +187,17 @@ user_name = check_markdown(data.first_name_)
 end
 if not administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] then
    if not lang then
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not_ *silent*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is not_ *silent*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل توانایی چت کردن را داشت*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از قبل توانایی چت کردن را داشت*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = nil
     save_data(_config.moderation.data, administration)
     if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _removed from_ *silent users list*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _removed from_ *silent users list*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *توانایی چت کردن رو به دست آورد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *توانایی چت کردن رو به دست آورد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -235,18 +235,18 @@ end
      end
 if is_gbanned(data.id_) then
    if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already_ *globally banned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is already_ *globally banned*", 0, "md")
     else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از گروه های ربات محروم بود*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از گروه های ربات محروم بود*", 0, "md")
       end
    end
   administration['gban_users'][tostring(data.id_)] = user_name
     save_data(_config.moderation.data, administration)
    kick_user(data.id_, arg.chat_id)
      if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *globally banned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _has been_ *globally banned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از تمام گروه های ربات محروم شد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از تمام گروه های ربات محروم شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -270,17 +270,17 @@ end
     end
 if not is_gbanned(data.id_) then
    if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not_ *globally banned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is not_ *globally banned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از گروه های ربات محروم نبود*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از گروه های ربات محروم نبود*", 0, "md")
       end
    end
   administration['gban_users'][tostring(data.id_)] = nil
     save_data(_config.moderation.data, administration)
     if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *globally unbanned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _has been_ *globally unbanned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از محرومیت گروه های ربات خارج شد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از محرومیت گروه های ربات خارج شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -360,35 +360,35 @@ end
      end
 if administration[tostring(arg.chat_id)]['banned'][tostring(data.id_)] then
     if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already_ *banned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is already_ *banned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* * از گروه محروم بود*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* * از گروه محروم بود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['banned'][tostring(data.id_)] = user_name
     save_data(_config.moderation.data, administration)
    kick_user(data.id_, arg.chat_id)
     if not lang then
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *banned*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _has been_ *banned*", 0, "md")
     else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از گروه محروم شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از گروه محروم شد*", 0, "md")
    end
 end
    if cmd == "unban" then
 if not administration[tostring(arg.chat_id)]['banned'][tostring(data.id_)] then
     if not lang then
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not_ *banned*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is not_ *banned*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از گروه محروم نبود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از گروه محروم نبود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['banned'][tostring(data.id_)] = nil
     save_data(_config.moderation.data, administration)
 channel_unblock(arg.chat_id, data.id_)
    if not lang then
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *unbanned*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _has been_ *unbanned*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از محرومیت گروه خارج شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از محرومیت گروه خارج شد*", 0, "md")
    end
 end
   if cmd == "silent" then
@@ -408,33 +408,33 @@ end
      end
 if administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] then
     if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already_ *silent*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is already_ *silent*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل توانایی چت کردن رو نداشت*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از قبل توانایی چت کردن رو نداشت*", 0, "md")
      end
    end
 administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = user_name
     save_data(_config.moderation.data, administration)
   if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _added to_ *silent users list*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _added to_ *silent users list*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *توانایی چت کردن رو از دست داد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *توانایی چت کردن رو از دست داد*", 0, "md")
    end
 end
   if cmd == "unsilent" then
 if not administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] then
    if not lang then
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not_ *silent*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is not_ *silent*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل توانایی چت کردن را داشت*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از قبل توانایی چت کردن را داشت*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = nil
     save_data(_config.moderation.data, administration)
     if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _removed from_ *silent users list*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _removed from_ *silent users list*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *توانایی چت کردن رو به دست آورد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *توانایی چت کردن رو به دست آورد*", 0, "md")
    end
 end
   if cmd == "banall" then
@@ -458,18 +458,18 @@ end
      end
 if is_gbanned(data.id_) then
    if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already_ *globally banned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is already_ *globally banned*", 0, "md")
     else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از گروه های ربات محروم بود*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از گروه های ربات محروم بود*", 0, "md")
       end
    end
   administration['gban_users'][tostring(data.id_)] = user_name
     save_data(_config.moderation.data, administration)
    kick_user(data.id_, arg.chat_id)
      if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *globally banned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _has been_ *globally banned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از تمام گروه های ربات محروم شد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از تمام گروه های ربات محروم شد*", 0, "md")
    end
 end
   if cmd == "unbanall" then
@@ -479,17 +479,17 @@ end
     end
 if not is_gbanned(data.id_) then
      if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not_ *globally banned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _is not_ *globally banned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از گروه های ربات محروم نبود*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از گروه های ربات محروم نبود*", 0, "md")
       end
    end
   administration['gban_users'][tostring(data.id_)] = nil
     save_data(_config.moderation.data, administration)
     if not lang then
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *globally unbanned*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_  *"..data.id_.."* _has been_ *globally unbanned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از محرومیت گروه های ربات خارج شد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "👤ڪـاربر با شِناسِـہ 🇮🇷  *"..data.id_.."* *از محرومیت گروه های ربات خارج شد*", 0, "md")
    end
 end
   if cmd == "kick" then
@@ -647,7 +647,7 @@ kick_user(matches[2], msg.to.id)
    if not lang then
  return tdcli.sendMessage(msg.to.id, msg.id, 0, "*User "..matches[2].." has been globally banned*", 0, "md")
     else
- return tdcli.sendMessage(msg.to.id, msg.id, 0, "*کاربر "..matches[2].." از تمام گروه هار ربات محروم شد*", 0, "md")
+ return tdcli.sendMessage(msg.to.id, msg.id, 0, "*کاربر "..matches[2].." از تمام گروه های ربات محروم شد*", 0, "md")
       end
    end
   if matches[2] and not string.match(matches[2], '^%d+$') then

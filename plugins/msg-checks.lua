@@ -129,10 +129,10 @@ end
 	else
 		return
 	end
-	if settings.lock_link then
-		lock_link = settings.lock_link
+	if settings.lock_links then
+		lock_links = settings.lock_links
 	else
-		lock_link = 'no'
+		lock_links = 'no'
 	end
 	if settings.lock_join then
 		lock_join = settings.lock_join
@@ -326,9 +326,9 @@ kick_user(user, chat)
    end
 end
 if msg.media.caption then
-local link_caption = msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.media.caption:match("[Tt].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
-if link_caption
-and lock_link == "yes" then
+local links_caption = msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.media.caption:match("[Tt].[Mm][Ee]/") or msg.media.caption:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
+if links_caption
+and lock_links == "yes" then
  if is_channel then
  del_msg(chat, tonumber(msg.id))
   elseif is_chat then
@@ -379,9 +379,9 @@ kick_user(user, chat)
       end
    end
 end
-local link_msg = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.text:match("[Tt].[Mm][Ee]/") or msg.text:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
-if link_msg
-and lock_link == "yes" then
+local links_msg = msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") or msg.text:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") or msg.text:match("[Tt].[Mm][Ee]/") or msg.text:match("[Tt][Ll][Gg][Rr][Mm].[Mm][Ee]/")
+if links_msg
+and lock_links == "yes" then
  if is_channel then
  del_msg(chat, tonumber(msg.id))
   elseif is_chat then
